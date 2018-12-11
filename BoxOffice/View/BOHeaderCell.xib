@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iGH-Jj-x7Y" customClass="BOHeaderCell" customModule="BoxOffice" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P28-OX-2x4">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="8"/>
+                    <color key="backgroundColor" red="0.80392156859999997" green="0.80392156859999997" blue="0.80392156859999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="8" id="qOK-jW-LT2"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D6a-Kr-I88">
+                    <rect key="frame" x="10" y="5" width="360" height="40"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r04-aJ-4OW">
+                    <rect key="frame" x="342" y="14" width="23" height="23"/>
+                    <state key="normal" image="btn_compose"/>
+                </button>
+            </subviews>
+            <constraints>
+                <constraint firstItem="D6a-Kr-I88" firstAttribute="leading" secondItem="ARH-hc-eH5" secondAttribute="leading" constant="10" id="2G2-bP-fBI"/>
+                <constraint firstItem="ARH-hc-eH5" firstAttribute="trailing" secondItem="r04-aJ-4OW" secondAttribute="trailing" constant="10" id="9kf-46-XXS"/>
+                <constraint firstItem="D6a-Kr-I88" firstAttribute="top" secondItem="ARH-hc-eH5" secondAttribute="top" constant="5" id="D23-Qs-RhI"/>
+                <constraint firstItem="ARH-hc-eH5" firstAttribute="trailing" secondItem="D6a-Kr-I88" secondAttribute="trailing" constant="5" id="O9R-Fh-Agw"/>
+                <constraint firstItem="P28-OX-2x4" firstAttribute="leading" secondItem="ARH-hc-eH5" secondAttribute="leading" id="SJC-aF-JGw"/>
+                <constraint firstAttribute="trailing" secondItem="P28-OX-2x4" secondAttribute="trailing" id="Zkm-cq-7eh"/>
+                <constraint firstItem="P28-OX-2x4" firstAttribute="top" secondItem="ARH-hc-eH5" secondAttribute="top" id="Zmk-KF-Mep"/>
+                <constraint firstItem="ARH-hc-eH5" firstAttribute="bottom" secondItem="D6a-Kr-I88" secondAttribute="bottom" constant="5" id="oVt-GQ-QHg"/>
+                <constraint firstItem="r04-aJ-4OW" firstAttribute="centerY" secondItem="D6a-Kr-I88" secondAttribute="centerY" id="qb0-95-3bV"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="ARH-hc-eH5"/>
+            <connections>
+                <outlet property="composeButton" destination="r04-aJ-4OW" id="CZ5-GF-aB6"/>
+                <outlet property="titleLabel" destination="D6a-Kr-I88" id="Zwf-3o-dOe"/>
+            </connections>
+            <point key="canvasLocation" x="83" y="-149"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="btn_compose" width="23" height="23"/>
+    </resources>
+</document>
