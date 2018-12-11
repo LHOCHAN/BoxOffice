@@ -632,20 +632,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Llb-Gn-BuZ">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Llb-Gn-BuZ">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="623"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xKm-UM-vt8">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_12" translatesAutoresizingMaskIntoConstraints="NO" id="PoC-5O-Thq">
-                                                <rect key="frame" x="87" y="18" width="20" height="20.000000000000004"/>
+                                                <rect key="frame" x="87" y="17.666666666666671" width="20" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="20" id="zvK-aO-CfT"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="평점" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5EW-yd-nzu">
-                                                <rect key="frame" x="192" y="123" width="30" height="25"/>
+                                                <rect key="frame" x="192" y="122.66666666666666" width="30" height="25"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="25" id="N2z-ST-WHf"/>
                                                 </constraints>
@@ -663,21 +663,21 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oir-38-aKz" customClass="YJStarRatingView" customModule="BoxOffice" customModuleProvider="target">
-                                                <rect key="frame" x="69" y="53" width="275" height="55"/>
+                                                <rect key="frame" x="69.666666666666686" y="52.666666666666671" width="275" height="55"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="oir-38-aKz" secondAttribute="height" multiplier="5:1" id="L1P-Nx-Eqx"/>
                                                     <constraint firstAttribute="height" constant="55" id="vqB-E5-4oj"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6xq-qD-Z98">
-                                                <rect key="frame" x="0.0" y="163" width="414" height="8"/>
+                                                <rect key="frame" x="0.0" y="162.66666666666666" width="414" height="8"/>
                                                 <color key="backgroundColor" red="0.80392156859999997" green="0.80392156859999997" blue="0.80392156859999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="8" id="ILj-zl-Age"/>
                                                 </constraints>
                                             </view>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="작성명을 입력해주세요" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vwY-8g-knT">
-                                                <rect key="frame" x="15" y="186" width="384" height="30"/>
+                                                <rect key="frame" x="15" y="185.66666666666666" width="384" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="l9r-A0-Wd3"/>
                                                 </constraints>
@@ -688,7 +688,7 @@
                                                     <outlet property="delegate" destination="AXV-je-XeV" id="YNY-C0-Mn0"/>
                                                 </connections>
                                             </textField>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" text="한줄평을 작성해주세요." translatesAutoresizingMaskIntoConstraints="NO" id="OHI-Bp-8kI">
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="한줄평을 작성해주세요." translatesAutoresizingMaskIntoConstraints="NO" id="OHI-Bp-8kI">
                                                 <rect key="frame" x="15" y="231" width="384" height="426"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
