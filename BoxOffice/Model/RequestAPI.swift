@@ -150,7 +150,7 @@ class RequestAPI {
         indicatorInMainQueue(visible: true)
         urlSession.dataTask(with: url) { [weak self] (data, response, error) in
             guard let self = self else { return }
-            self.indicatorInMainQueue(visible: true)
+            self.indicatorInMainQueue(visible: false)
             if let error = error {
                 completionHandler(false, nil, error)
                 return
