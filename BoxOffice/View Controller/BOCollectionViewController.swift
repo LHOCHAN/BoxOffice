@@ -89,10 +89,7 @@ class BOCollectionViewController: BOMovieViewController {
     // MARK: -
     /// 네이게이션 타이틀을 변경한다.
     private func changeNavigationTitle() {
-        guard let orderType = RequestAPI.orderType else {
-            return
-        }
-        switch orderType {
+        switch RequestAPI.orderType {
         case .reservationRate:
             navigationItem.title = "예매율"
         case .curation:
@@ -107,14 +104,11 @@ class BOCollectionViewController: BOMovieViewController {
     /// 영화 데이터를 요청한다.
     private func requestMovies() {
         dataModels.removeAll()
-        guard let orderType = RequestAPI.orderType else {
-            return
-        }
         // 리프레셔가 비활성 상태이면, 액티비티 인디케이터뷰 활성화
         if !refresher.isRefreshing {
             indicatorViewAnimating(activityIndicatorView, refresher: refresher, isStart: true)
         }
-        requestAPI.requestMovies(orderType) { [weak self ] (isSuccess, data, error) in
+        requestAPI.requestMovies(RequestAPI.orderType) { [weak self ] (isSuccess, data, error) in
             guard let self = self else { return }
             if let error = error {
                 self.errorHandler(error) {

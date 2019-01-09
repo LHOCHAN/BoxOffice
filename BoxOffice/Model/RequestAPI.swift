@@ -17,7 +17,6 @@ enum OrderType: Int {
 
 /// 완료 핸들러 타입 별칭. (Bool, [MovieData]) -> Void.
 typealias completionHandler = (Bool, AnyObject?, Error?) -> Void
-private var associationKey: UInt8 = 0
 
 class RequestAPI {
     /// URL 타입.
@@ -35,13 +34,7 @@ class RequestAPI {
     
     // MARK: - Properties
     // MARK: -
-    static var orderType: OrderType? {
-        get {
-            return objc_getAssociatedObject(self, &associationKey) as? OrderType ?? OrderType.reservationRate
-        } set {
-            objc_setAssociatedObject(self, &associationKey, newValue, .OBJC_ASSOCIATION_RETAIN)
-        }
-    }
+    static var orderType: OrderType = .reservationRate
     private lazy var urlSession = URLSession.shared
     private var tasks = [URLSessionTask]()
     private let baseURL = "http://connect-boxoffice.run.goorm.io"
