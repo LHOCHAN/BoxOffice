@@ -473,13 +473,13 @@
                                                     <rect key="frame" x="15" y="0.0" width="28" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="EBP-om-idU"/>
-                                                        <constraint firstAttribute="width" constant="28" id="Qiw-Gt-RfE"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="28" id="Qiw-Gt-RfE"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="감독 이름" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iU0-fH-bAJ">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="252" text="감독 이름" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iU0-fH-bAJ">
                                                     <rect key="frame" x="48" y="0.0" width="361" height="19.333333333333332"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <nil key="textColor"/>
@@ -489,13 +489,13 @@
                                                     <rect key="frame" x="15" y="25" width="28" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="7un-5O-aAl"/>
-                                                        <constraint firstAttribute="width" constant="28" id="x63-yY-7if"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="28" id="x63-yY-7if"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="출연진" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jhO-Ie-BjY" userLabel="출연">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="출연진" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jhO-Ie-BjY" userLabel="출연">
                                                     <rect key="frame" x="48" y="25" width="341" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <nil key="textColor"/>
@@ -581,6 +581,7 @@
                                                 <constraint firstItem="SN8-af-dv1" firstAttribute="top" secondItem="S6o-vn-yeT" secondAttribute="bottom" constant="5" id="hib-nt-L7I"/>
                                                 <constraint firstItem="s2t-Gq-5t9" firstAttribute="leading" secondItem="KwY-Kr-gbu" secondAttribute="trailing" constant="5" id="jAf-Ao-SOR"/>
                                                 <constraint firstAttribute="bottom" secondItem="SN8-af-dv1" secondAttribute="bottom" constant="10" id="o1o-hr-4LE"/>
+                                                <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="S6o-vn-yeT" secondAttribute="trailing" constant="10" id="y3U-PI-qNW"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -622,7 +623,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fzR-0t-auQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3141" y="532"/>
+            <point key="canvasLocation" x="3140.579710144928" y="531.52173913043487"/>
         </scene>
         <!--한줄평 작성-->
         <scene sceneID="CRA-F8-pyK">
@@ -636,7 +637,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="623"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xKm-UM-vt8">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="576"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_12" translatesAutoresizingMaskIntoConstraints="NO" id="PoC-5O-Thq">
                                                 <rect key="frame" x="87" y="17.666666666666671" width="20" height="20"/>
@@ -689,7 +690,7 @@
                                                 </connections>
                                             </textField>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="한줄평을 작성해주세요." translatesAutoresizingMaskIntoConstraints="NO" id="OHI-Bp-8kI">
-                                                <rect key="frame" x="15" y="231" width="384" height="426"/>
+                                                <rect key="frame" x="15" y="230.66666666666671" width="384" height="330.33333333333326"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="300" id="hib-Vp-1wu"/>

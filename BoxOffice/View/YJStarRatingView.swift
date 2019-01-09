@@ -109,15 +109,20 @@ class YJStarRatingView: UIView {
     
     // MARK: - Initializers
     // MARK: -
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        updateImageViews()
+    }
+    /// 기본 초기화 메서드
     required init(frame: CGRect, type: RatingType = .half, isEditable: Bool = true) {
         super.init(frame: frame)
         self.type = type
         self.isEditable = isEditable
         updateImageViews()
     }
-    required init?(coder aDecoder: NSCoder) {
-        super .init(coder: aDecoder)
-        updateImageViews()
+    // 스토리보드 에러: IB Designables - Failed to render and update auto layout status, The agent crashed를 피하기 위한 구현
+    override init(frame: CGRect) {
+        super.init(frame: frame)
     }
     convenience init(frame: CGRect, type: RatingType, isEditable: Bool, minRating: Int, maxRating: Int, currentRating: Double) {
         self.init(frame: frame, type: type, isEditable: isEditable)
