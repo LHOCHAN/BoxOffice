@@ -31,15 +31,15 @@ protocol BOMovieOrderReqesut {
     func didReceiveNotification(_ notification: Notification)
 }
 
-@objc protocol BOMovieUI {
+protocol BOMovieUI {
     /// 등급에 따라 이미지를 변경한다.
-    @objc optional func setGradeImageView(_ imageView: UIImageView, grade: Int)
+    func setGradeImageView(_ imageView: UIImageView, grade: Int)
     /// 인디케이터 동작.
-    @objc optional func indicatorViewAnimating(_ indicatorView: UIActivityIndicatorView, isStart: Bool)
+    func indicatorViewAnimating(_ indicatorView: UIActivityIndicatorView, isStart: Bool)
     /// 인디케이터 동작.
-    @objc optional func indicatorViewAnimating(_ indicatorView: UIActivityIndicatorView, refresher: UIRefreshControl, isStart: Bool)
+    func indicatorViewAnimating(_ indicatorView: UIActivityIndicatorView, refresher: UIRefreshControl, isStart: Bool)
     /// 정렬 타입을 선택하는 액션시트를 나타낸다.
-    @objc optional func setOrderType()
+    func setOrderType()
 }
 
 extension BOMovieUI {
@@ -54,6 +54,9 @@ extension BOMovieUI {
             imageView.image = UIImage(named: "ic_19")
         }
     }
+    func indicatorViewAnimating(_ indicatorView: UIActivityIndicatorView, isStart: Bool) {}
+    func indicatorViewAnimating(_ indicatorView: UIActivityIndicatorView, refresher: UIRefreshControl, isStart: Bool) {}
+    func setOrderType() {}
 }
 
 // MARK: - BOMovieViewController
@@ -124,7 +127,7 @@ class BOMovieViewController: UIViewController, BOMovie {
             }
         }
     }
-    @objc func setOrderType() {
+    func setOrderType() {
         // 메인 스레드에서 실행되도록
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
