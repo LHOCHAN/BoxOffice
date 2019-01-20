@@ -53,7 +53,7 @@ class BOWriteCommentViewController: BOMovieViewController {
     }
     @IBOutlet private var activityIndicatorView: UIActivityIndicatorView! {
         didSet {
-            indicatorViewAnimating(activityIndicatorView, isStart: false)
+            indicatorViewAnimating(activityIndicatorView, refresher: nil, isStart: false)
         }
     }
     
@@ -114,10 +114,10 @@ class BOWriteCommentViewController: BOMovieViewController {
         }
         let rating = starRatingView.currentRating
         setWriter(writer)
-        indicatorViewAnimating(activityIndicatorView, isStart: false)
+        indicatorViewAnimating(activityIndicatorView, refresher: nil, isStart: false)
         requestAPI.postMovieComment(id, writer: writer, contents: contents, rating: rating) { [weak self] (isSuccess, _, error) in
             guard let self = self else { return }
-            self.indicatorViewAnimating(self.activityIndicatorView, isStart: false)
+            self.indicatorViewAnimating(self.activityIndicatorView, refresher: nil, isStart: false)
             if let error = error {
                 self.errorHandler(error)
             }

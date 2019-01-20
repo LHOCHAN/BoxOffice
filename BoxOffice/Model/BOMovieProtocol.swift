@@ -35,9 +35,7 @@ protocol BOMovieUI {
     /// 등급에 따라 이미지를 변경한다.
     func setGradeImageView(_ imageView: UIImageView, grade: Int)
     /// 인디케이터 동작.
-    func indicatorViewAnimating(_ indicatorView: UIActivityIndicatorView, isStart: Bool)
-    /// 인디케이터 동작.
-    func indicatorViewAnimating(_ indicatorView: UIActivityIndicatorView, refresher: UIRefreshControl, isStart: Bool)
+    func indicatorViewAnimating(_ indicatorView: UIActivityIndicatorView, refresher: UIRefreshControl?, isStart: Bool)
     /// 정렬 타입을 선택하는 액션시트를 나타낸다.
     func setOrderType()
 }
@@ -54,8 +52,7 @@ extension BOMovieUI {
             imageView.image = UIImage(named: "ic_19")
         }
     }
-    func indicatorViewAnimating(_ indicatorView: UIActivityIndicatorView, isStart: Bool) {}
-    func indicatorViewAnimating(_ indicatorView: UIActivityIndicatorView, refresher: UIRefreshControl, isStart: Bool) {}
+    func indicatorViewAnimating(_ indicatorView: UIActivityIndicatorView, refresher: UIRefreshControl?, isStart: Bool) {}
     func setOrderType() {}
 }
 
@@ -94,7 +91,7 @@ class BOMovieViewController: UIViewController, BOMovie {
     
     // MARK: - BOMovieUI protocol
     // MARK: -
-    func indicatorViewAnimating(_ indicatorView: UIActivityIndicatorView, isStart: Bool) {
+    func indicatorViewAnimating(_ indicatorView: UIActivityIndicatorView, refresher: UIRefreshControl?, isStart: Bool) {
         if isStart {
             DispatchQueue.main.async { [weak self] in
                 guard let self = self else { return }
@@ -106,21 +103,7 @@ class BOMovieViewController: UIViewController, BOMovie {
             DispatchQueue.main.async {
                 indicatorView.stopAnimating()
                 indicatorView.isHidden = true
-            }
-        }
-    }
-    func indicatorViewAnimating(_ indicatorView: UIActivityIndicatorView, refresher: UIRefreshControl, isStart: Bool) {
-        if isStart {
-            DispatchQueue.main.async { [weak self] in
-                guard let self = self else { return }
-                self.view.bringSubviewToFront(indicatorView)
-                indicatorView.isHidden = false
-                indicatorView.startAnimating()
-            }
-        } else {
-            DispatchQueue.main.async {
-                indicatorView.stopAnimating()
-                indicatorView.isHidden = true
+                guard let refresher = refresher else { return }
                 if refresher.isRefreshing {
                     refresher.perform(#selector(refresher.endRefreshing), with: nil, afterDelay: 0.00)
                 }

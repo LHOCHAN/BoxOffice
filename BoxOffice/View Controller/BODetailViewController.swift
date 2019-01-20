@@ -45,7 +45,7 @@ class BODetailViewController: BOMovieViewController {
     }
     @IBOutlet private var activityIndicatorView: UIActivityIndicatorView! {
         didSet {
-            indicatorViewAnimating(activityIndicatorView, isStart: false)
+            indicatorViewAnimating(activityIndicatorView, refresher: nil, isStart: false)
         }
     }
     
@@ -143,7 +143,7 @@ class BODetailViewController: BOMovieViewController {
             return
         }
         // 액티비티 인디케이터뷰 활성화
-        indicatorViewAnimating(self.activityIndicatorView, isStart: true)
+        indicatorViewAnimating(self.activityIndicatorView, refresher: nil, isStart: true)
         // 이미지 요청의 경우 다른 요청에서 얻어온 값을 파라미터로 사용하기 때문에
         // 디스패치 그룹을 사용하여 처리
         let dispatchGroup = DispatchGroup()
@@ -154,7 +154,7 @@ class BODetailViewController: BOMovieViewController {
             guard let self = self else { return }
             if let error = error {
                 self.errorHandler(error) {
-                    self.indicatorViewAnimating(self.activityIndicatorView, isStart: false)
+                    self.indicatorViewAnimating(self.activityIndicatorView, refresher: nil, isStart: false)
                 }
             }
             if isSuccess, let movie = movie as? MovieData {
@@ -169,7 +169,7 @@ class BODetailViewController: BOMovieViewController {
             guard let self = self else { return }
             if let error = error {
                 self.errorHandler(error) {
-                    self.indicatorViewAnimating(self.activityIndicatorView, isStart: false)
+                    self.indicatorViewAnimating(self.activityIndicatorView, refresher: nil, isStart: false)
                 }
             }
             if isSuccess, let comments = comments as? [CommentData] {
@@ -183,7 +183,7 @@ class BODetailViewController: BOMovieViewController {
         dispatchGroup.notify(queue: .global()) {
             if errorOccurred {
                 self.errorHandler() {
-                    self.indicatorViewAnimating(self.activityIndicatorView, isStart: false)
+                    self.indicatorViewAnimating(self.activityIndicatorView, refresher: nil, isStart: false)
                 }
             } else {
                 self.downloadMovieImage()
@@ -198,7 +198,7 @@ class BODetailViewController: BOMovieViewController {
         }
         imagePrefetcher?.startPrefetching(url: url) { [weak self] (image) in
             guard let self = self else { return }
-            self.indicatorViewAnimating(self.activityIndicatorView, isStart: false)
+            self.indicatorViewAnimating(self.activityIndicatorView, refresher: nil, isStart: false)
             guard let image = image else {
                 self.errorHandler() {
                     // 실패하였지만 이미지를 제외한 데이터는 갖고 있기 때문에 테이블 뷰를 리로드한다.
